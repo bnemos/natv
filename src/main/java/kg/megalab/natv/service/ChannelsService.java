@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ChannelsService {
 
-    List<OutputChannel> getChannel();
+    List<OutputChannel> getChannel(int limitPage);
 
     ChannelsDto saveChannel(ChannelsDto channelsDto);
 }
