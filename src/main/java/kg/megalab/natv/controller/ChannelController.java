@@ -26,8 +26,9 @@ public class ChannelController {
     }
 
     @GetMapping("/get_channels")
-    public List<OutputChannel> getChannels(){
-        return channelsService.getChannel();
+    public List<OutputChannel> getChannels(@RequestParam int pageLimit)
+    {
+        return channelsService.getChannel(pageLimit);
     }
 
 }

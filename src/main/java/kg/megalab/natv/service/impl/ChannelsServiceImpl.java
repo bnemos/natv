@@ -36,7 +36,7 @@ public class ChannelsServiceImpl implements ChannelsService {
     }
 
     @Override
-    public List<OutputChannel> getChannel()
+    public List<OutputChannel> getChannel(int limitPage)
     {
         List<PricesDto> pricesDtos = pricesService.getAllPrices();
         List<PricesDto> pricesDtoList = pricesDtos.stream()
@@ -50,7 +50,6 @@ public class ChannelsServiceImpl implements ChannelsService {
             outputChannel.setChannelName(p.getChannelsDto().getName());
             outputChannel.setPrice(p.getPrice());
             outputChannel.setPhotoUrl(p.getChannelsDto().getPhotoUrl());
-            outputChannelList.add(outputChannel);
             List<DiscountsDto> discountsDtos = discountsService.allActiveChannelDiscounts(p.getChannelsDto().getId());
             List<OutputDiscount> discountsDtoList = new ArrayList<>();
             for (DiscountsDto d: discountsDtos){
@@ -62,8 +61,8 @@ public class ChannelsServiceImpl implements ChannelsService {
             outputChannel.setDiscounts(discountsDtoList);
             outputChannelList.add(outputChannel);
         }
+        return outputChannelList.stream().limit(limitPage).collect(Collectors.toList());
 
-        return outputChannelList;
     }
 
     @Override
