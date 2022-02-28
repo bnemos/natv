@@ -38,5 +38,14 @@ public class DiscountsServiceImpl implements DiscountsService {
         return discountsMapper.toDiscountsDto(discountsRepo.allActiveChannelDiscounts(id));
     }
 
+    @Override
+    public DiscountsDto findByChannelAndMinDays(int days, Long channelId) {
+        Discounts discounts = discountsRepo.findByChannelAndMinDays(days, channelId);
+        if(discounts != null)
+            return discountsMapper.mapToDiscountsDto(discounts);
+        else
+            return null;
+    }
+
 
 }

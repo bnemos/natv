@@ -10,4 +10,6 @@ public interface PricesService {
     PricesDto savePrices(PricesDto pricesDto);
 
     List<PricesDto> getAllPrices();
+
+    PricesDto findChannelAndId(Long id);
 }

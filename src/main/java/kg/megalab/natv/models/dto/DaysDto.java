@@ -12,9 +12,7 @@ import java.time.LocalDate;
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class DaysDto {
-
     Long id;
     LocalDate day;
-
-
+    OrderDetailsDto orderDetailsDto;
 }

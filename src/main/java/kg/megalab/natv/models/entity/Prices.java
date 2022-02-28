@@ -15,6 +15,7 @@ import java.sql.Date;
 @NoArgsConstructor
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Table(name = "prices")
 public class Prices {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -1,12 +1,14 @@
 package kg.megalab.natv.models.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.time.LocalDate;
 
 @Entity
 @AllArgsConstructor
@@ -18,9 +20,9 @@ public class Discounts {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
     double percent;
-    @JsonFormat(pattern = "dd-mm-yyyy")
+    @JsonFormat(shape = JsonFormat.Shape.ARRAY, pattern="dd-MM-yyyy")
     Date startDate;
-    @JsonFormat(pattern = "dd-mm-yyyy")
+    @JsonFormat(shape = JsonFormat.Shape.ARRAY, pattern="dd-MM-yyyy")
     Date endDate;
     int minDays;
     @ManyToOne

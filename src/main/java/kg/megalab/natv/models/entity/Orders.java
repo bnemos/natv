@@ -7,7 +7,7 @@ import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @AllArgsConstructor
@@ -23,9 +23,9 @@ public class Orders {
     String phone;
     String email;
     int totalPrice;
-    @JsonFormat(pattern = "dd-mm-yyyy")
+    @JsonFormat(shape = JsonFormat.Shape.ARRAY, pattern="dd-MM-yyyy")
     Date editDate;
-    @JsonFormat(pattern = "dd-mm-yyyy")
+    @JsonFormat(shape = JsonFormat.Shape.ARRAY, pattern="dd-MM-yyyy")
     Date addDate;
     Status status;
 }

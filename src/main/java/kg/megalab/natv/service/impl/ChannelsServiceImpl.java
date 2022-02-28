@@ -70,5 +70,10 @@ public class ChannelsServiceImpl implements ChannelsService {
         return channelMapper.mapToChannelsDto(channelsRepo.save(channelMapper.mapToChannel(channelsDto)));
     }
 
-    
+    @Override
+    public ChannelsDto findChannelById(Long id) {
+        return channelMapper.mapToChannelsDto(channelsRepo.findByActiveAndId(id));
+    }
+
+
 }

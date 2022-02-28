@@ -11,12 +11,11 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-
 public class OrderDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
-    int price;
+    double price;
     @ManyToOne
     @JoinColumn(name = "id_channels")
     Channels channels;

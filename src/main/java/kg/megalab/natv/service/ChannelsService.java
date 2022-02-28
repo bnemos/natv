@@ -10,4 +10,6 @@ public interface ChannelsService {
     List<OutputChannel> getChannel(int limitPage);
 
     ChannelsDto saveChannel(ChannelsDto channelsDto);
+
+    ChannelsDto findChannelById(Long id);
 }

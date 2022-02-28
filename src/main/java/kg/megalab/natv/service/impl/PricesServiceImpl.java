@@ -31,6 +31,11 @@ public class PricesServiceImpl implements PricesService {
     @Override
     public List<PricesDto> getAllPrices() {
         return pricesMapper.toPricesDto(pricesRepo.findAll());
-
     }
+
+    @Override
+    public PricesDto findChannelAndId(Long id) {
+        return pricesMapper.mapToPricesDto(pricesRepo.findByChannelsAndId(id));
+    }
+
 }

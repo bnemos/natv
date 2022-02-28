@@ -12,4 +12,6 @@ public interface DiscountsService {
         DiscountsDto saveDiscounts(DiscountsDto discounts);
 
         List<DiscountsDto> allActiveChannelDiscounts(Long id);
+
+        DiscountsDto findByChannelAndMinDays(int days, Long channelId);
 }
