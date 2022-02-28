@@ -2,7 +2,6 @@ package kg.megalab.natv.models.objects;
 
 
 import kg.megalab.natv.models.dto.ChannelsDto;
-import kg.megalab.natv.models.dto.PricesDto;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;

@@ -64,6 +64,7 @@ public class OrderServiceImpl implements OrderService {
                 double totalPricePerChannel = (pricePerSymbol * textSize) * days;
                 makeOrderOutput.setTotalPrice(totalPricePerChannel);
                 makeOrderOutput.setPrice(pricePerSymbol);
+
             }
 
             makeOrderOutput.setText(makeOrderInput.getAdText());
